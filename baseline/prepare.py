@@ -6,9 +6,9 @@ Processes data from either a zip file or directory, transforms it,
 and writes partitioned Parquet files for optimal query performance.
 
 Usage:
-  python prepare.py --data-path ../data-lite/data-lite/data-lite.zip  # From zip
-  python prepare.py --data-path ../data-lite/data-lite/data-lite       # From directory
-  python prepare.py --data-path ../data/data.zip                        # Full dataset
+  python prepare.py --data-path ./data-lite/data-lite.zip  # From zip
+  python prepare.py --data-path ./data-lite/data-lite/data-lite       # From directory
+  python prepare.py --data-path ./data/data.zip                        # Full dataset
 """
 import zipfile
 import pandas as pd
@@ -449,19 +449,19 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data-path",
         type=Path,
-        default=Path("../data-lite/data-lite.zip"),
-        help="Path to zip file or directory containing CSV data (default: ../data-lite/data-lite.zip)"
+        default=Path("./data-lite/data-lite.zip"),
+        help="Path to zip file or directory containing CSV data (default: ./data-lite/data-lite.zip)"
     )
 
     args = parser.parse_args()
     data_path = args.data_path
-
+go
     if not data_path.exists():
         print(f"[ERROR] Path not found: {data_path}")
         print(f"\nPlease provide a valid zip file or directory path.")
         print(f"Examples:")
-        print(f"  python prepare.py --data-path ../data-lite/data-lite.zip     # From zip")
-        print(f"  python prepare.py --data-path ../data-lite/data-lite/         # From directory")
+        print(f"  python prepare.py --data-path ./data-lite/data-lite.zip     # From zip")
+        print(f"  python prepare.py --data-path ./data-lite/data-lite/data-lite         # From directory")
         exit(1)
 
     # Detect input type and call appropriate function

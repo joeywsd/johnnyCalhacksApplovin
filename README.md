@@ -42,7 +42,7 @@ This solution transforms a 15M+ row ad event dataset into an optimized query eng
 pip install -r requirements.txt
 ```
 
-### Usage
+### Usage for Baseline data
 
 #### Step 1: Prepare Data (One-time)
 
@@ -50,10 +50,10 @@ Process CSV data and create optimized storage:
 
 ```bash
 # From zip file
-python prepare.py --data-path ../data-lite/data-lite.zip
+python prepare.py --data-path ./data-lite/data-lite.zip 
 
 # From directory (judges will use this)
-python prepare.py --data-path ../data-lite/data-lite/
+python prepare.py --data-path ./data-lite/data-lite/data-lite/
 ```
 
 This creates:
@@ -76,7 +76,7 @@ Compare results against baseline:
 
 ```bash
 # Run baseline
-python main.py --data-dir ../data-lite/data-lite/ --out-dir ./out_baseline
+python main.py --data-dir ./data-lite/data-lite/data-lite/ --out-dir ./out_baseline
 
 # Compare
 python verify_results.py --baseline ./out_baseline --optimized ./out
@@ -218,11 +218,13 @@ baseline/
 
 ## How to Run on Full Dataset (20GB)
 
-**Note: Full dataset performance not yet verified. Prepare phase may take 15-30 minutes.**
+**Note: Full dataset performance not yet verified. Prepare phase may take 15-30 minutes. First unzip the file or put the full file so that it its path should be ./data/data**
 
 ```bash
+ Unzip the file or put the full file so that it its path should be ./data/data
+
 # Prepare (estimated time: 15-30 min for unzipped directory)
-python prepare.py --data-path ../data/
+python prepare.py --data-path ./data/data
 
 # Run queries (expected: <5 seconds)
 python run.py --out-dir ./results

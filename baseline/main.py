@@ -140,8 +140,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data-dir",
         type=Path,
-        default=Path("../data-lite/data-lite/data-lite"),
-        help="The folder where the input CSV is provided (default: ../data-lite/data-lite/data-lite)"
+        default=Path("./data-lite/data-lite/data-lite"),
+        help="The folder where the input CSV is provided (default: ./data-lite/data-lite/data-lite)"
     )
     parser.add_argument(
         "--out-dir",
@@ -154,4 +154,4 @@ if __name__ == "__main__":
     run(queries, args.data_dir, args.out_dir)
 
 # Run with:
-# python main.py --data-dir ../data-lite/data-lite/data-lite --out-dir ./out
+# python main.py --data-dir ./data-lite/data-lite/data-lite --out-dir ./out

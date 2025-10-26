@@ -149,7 +149,7 @@ if __name__ == "__main__":
     if not DATA_STORE.exists():
         print(f"[ERROR] Data store not found at {DATA_STORE}/")
         print(f"\nPlease run prepare.py first to create the optimized data store.")
-        print(f"Example: python prepare.py --data-zip ../data-lite/data-lite/data-lite.zip")
+        print(f"Example: python prepare.py --data-path ./data-lite/data-lite.zip")
         exit(1)
 
     # Check if data store has data
