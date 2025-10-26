@@ -455,7 +455,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     data_path = args.data_path
-go
+
     if not data_path.exists():
         print(f"[ERROR] Path not found: {data_path}")
         print(f"\nPlease provide a valid zip file or directory path.")
